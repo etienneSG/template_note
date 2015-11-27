@@ -1,0 +1,59 @@
+% Exemple d'utilisation de la classe note
+
+\documentclass{note}
+
+\graphicspath{{images/}}
+
+\begin{document}
+
+
+% Le titre du papier
+\title{Template pour écrire une note}
+
+% Les auteurs et leur numéro d'affiliation
+\author{Etienne de Saint Germain\inst{1}\inst{2}}
+
+
+% Les affiliations (par ordre croissant des numéros d'affiliation) séparées par \and
+\institute
+{
+  Argon Consulting, 122 Rue Edouard Vaillant, 92300 Levallois-Perret\\
+  \email{etienne.de-saint-germain@argon-consult.com}
+  \and
+  CERMICS, Cité Descartes, 6-8 Avenue Blaise Pascal, 77455 Champs-sur-Marne\\
+  \email{etienne.gaillard-de-saint-germain@cermics.enpc.fr}
+}
+
+
+% Création de la page de titre
+\maketitle
+\thispagestyle{empty}
+
+\noindent\rule{\textwidth}{.5pt}
+
+% Résumé
+\abstract{Ceci est le résumé de la note}
+
+% Les mots-clés
+\keywords{bouh, cool}
+
+\noindent\rule{\textwidth}{.5pt}
+
+\section{Comment faire une note ?}
+
+Il suffit de savoir écrire en LaTeX et d'avoir des choses à raconter. (Contrairement à ce que je fais actuellement.)
+
+
+\section{Une autre section}
+
+Pour caser une référence \cite{UneRef}.
+
+
+% La bibliographie
+
+\bibliographystyle{siam}
+\bibliography{template_note}
+
+
+
+\end{document}
