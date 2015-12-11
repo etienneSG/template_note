@@ -82,6 +82,7 @@
 \usepackage{tikz}
 \usetikzlibrary{calc,arrows,automata}
 \usetikzlibrary{decorations,decorations.pathreplacing}
+\usetikzlibrary{patterns}
 
 % On redéfinit des headers propres
 \usepackage{fancyhdr}
