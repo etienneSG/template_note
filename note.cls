@@ -95,6 +95,9 @@
 
 % Raccourci utile
 \newcommand{\red}[1]{\textcolor{red}{#1}} % texte en rouge
+\newcommand\RR{\mathbb{R}}           %R de l'ensemble des réels
+\newcommand\ZZ{\mathbb{Z}}           %Z de l'ensemble des relatifs
+\newcommand\NN{\mathbb{N}}           %N de l'ensemble des naturels
 
 \renewcommand{\abstract}[1]{\textbf{Résumé} : \itshape #1 \normalfont}
 \newcommand{\keywords}[1]{\textbf{Mots-clés} : \itshape #1 \normalfont}
