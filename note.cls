@@ -99,8 +99,10 @@
 \newcommand\ZZ{\mathbb{Z}}           %Z de l'ensemble des relatifs
 \newcommand\NN{\mathbb{N}}           %N de l'ensemble des naturels
 
-\renewcommand{\abstract}[1]{\textbf{Résumé} : \itshape #1 \normalfont}
-\newcommand{\keywords}[1]{\textbf{Mots-clés} : \itshape #1 \normalfont}
+% Variables contenant respectivement la date de création, le résumé, les mots-clés
+\def\CreationDate#1{\gdef\@CreationDate{#1}}
+\def\abstract#1{\gdef\@abstract{#1}}
+\def\keywords#1{\gdef\@keywords{#1}}
 
 % Pour écrire une adresse mail
 \newcommand{\email}[1]{{\tt#1}}
@@ -141,17 +143,27 @@
   \begin{center}%
     {\LARGE    \@title \par}%
     \vskip 1em%
-    \textit{\today}
+    \textit{\@CreationDate}
+    \vskip .1em%
+    \textit{(dernière révision : \today)}
     \vskip 2em%
     {\large
       \lineskip .5em%
       \begin{tabular}[t]{c}%
         \@author
       \end{tabular}\par}%
-  \par
-  \vskip 0.5em
- {\footnotesize\institutename}
+    \par
+    \vskip .5em
+    {\footnotesize\institutename}
   \end{center}%
+  \vskip 0em%
+  \noindent\rule{\textwidth}{.5pt}
+  \vskip .1em%
+  {\textbf{Résumé} : \itshape \@abstract \normalfont}
+  \vskip .5em%
+  {\textbf{Mots-clés} : \itshape \@keywords \normalfont}
+  \vskip 0em%
+  \noindent\rule{\textwidth}{.5pt}
 }
 
 
