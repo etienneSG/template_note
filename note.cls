@@ -8,6 +8,15 @@
 \usepackage[T1]{fontenc}
 \usepackage[francais]{babel}
 
+% Pour définir une commande en plusieurs langues
+\newcommand{\multilangnewcommand}[3]{%
+  \newcommand{#1}{%
+    \iflanguage{english}{#2}{%
+    \iflanguage{french}{#3}{%
+    }}%
+  }%
+}
+
 \setlength{\textheight}{250mm}  % hauteur texte
 \setlength{\topmargin}{-20mm}   % espace au dessus de en-tete
 \setlength{\headheight}{12pt}   % hauteur en-tete
@@ -40,6 +49,7 @@
 
 % Pour plus de maths et de chimie
 \usepackage{amsmath,amsfonts,amsthm,dsfont}
+\usepackage[overload]{empheq}
 \usepackage[version=3]{mhchem} % Chimie
 \usepackage{siunitx}  % Utilisation des unités SI
 
@@ -475,6 +485,8 @@
 \newcommand{\iid}{\text{i.i.d.}}                            % ``i.i.d.''
 \newcommand{\as}{\text{a.s.}}                               % ``a.s.''
 \newcommand{\Pps}{\text{$\prbt$-}\as}                       % ``P-a.s.''
+\multilangnewcommand{\st}{\mathrm{s.t.}}{\mathrm{s.c.}}     % ``s.c.''
+
 
 %%%%% Grilles
 
