@@ -10,7 +10,7 @@ all: pdf clean change_name
 
 IMG_LIST=$(wildcard $(IMG_PATH)/*.jpg)
 
-pdf: $(TEX_NAME).tex $(TEX_NAME).bib $(CLASS_NAME).cls $(IMG_LIST)
+pdf: $(TEX_NAME).tex $(TEX_NAME).bib $(CLASS_NAME).cls math_command.tex $(IMG_LIST)
 	pdflatex $(TEX_NAME).tex
 	bibtex $(TEX_NAME)
 	pdflatex $(TEX_NAME).tex
