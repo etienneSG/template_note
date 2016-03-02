@@ -62,6 +62,53 @@
 % Ou:
 % \lstinputlisting[language=Python]{source_filename.py}
 \usepackage{listings}
+\usepackage{color}
+\usepackage{setspace}
+\definecolor{Code}{rgb}{0,0,0}
+\definecolor{Decorators}{rgb}{0.5,0.5,0.5}
+\definecolor{Numbers}{rgb}{0.5,0,0}
+\definecolor{MatchingBrackets}{rgb}{0.25,0.5,0.5}
+\definecolor{Keywords}{rgb}{0,0,1}
+\definecolor{self}{rgb}{0,0,0}
+\definecolor{Strings}{rgb}{0,0.63,0}
+\definecolor{Comments}{rgb}{0,0.63,1}
+\definecolor{Backquotes}{rgb}{0,0,0}
+\definecolor{Classname}{rgb}{0,0,0}
+\definecolor{FunctionName}{rgb}{0,0,0}
+\definecolor{Operators}{rgb}{0,0,0}
+\definecolor{Background}{rgb}{0.98,0.98,0.98}
+\lstdefinelanguage{Python}{
+  numbers=left,
+  numberstyle=\footnotesize,
+  numbersep=1em,
+  xleftmargin=1em,
+  framextopmargin=2em,
+  framexbottommargin=2em,
+  showspaces=false,
+  showtabs=false,
+  showstringspaces=false,
+  frame=l,
+  tabsize=4,
+  columns=flexible,
+  % Basic
+  basicstyle=\ttfamily\small\setstretch{1},
+  backgroundcolor=\color{Background},
+  % Comments
+  commentstyle=\color{Comments}\slshape,
+  % Strings
+  stringstyle=\color{Strings},
+  morecomment=[s][\color{Strings}]{"""}{"""},
+  morecomment=[s][\color{Strings}]{'''}{'''},
+  % keywords
+  morekeywords = {import,from,class,def,for,while,if,is,in,elif,else,not,and,or,print,break,continue,return,True,False,None,access,as,,del,except,exec,finally,global,import,lambda,pass,print,raise,try,assert},
+  keywordstyle={\color{Keywords}\bfseries},
+  % additional keywords
+  morekeywords={[2]@invariant,pylab,numpy,np,scipy},
+  keywordstyle={[2]\color{Decorators}\slshape},
+  emph={self},
+  emphstyle={\color{self}\slshape},
+  % 
+}
 
 % Pour du pseudo-code
 \usepackage[french]{algorithm2e}
@@ -95,6 +142,7 @@
 \usetikzlibrary{calc,arrows,automata}
 \usetikzlibrary{decorations,decorations.pathreplacing}
 \usetikzlibrary{patterns}
+\usepackage{tikzscale}
 
 
 % Raccourci utile
@@ -140,7 +188,7 @@
  \endgroup}
 
 % Logo
-\newcommand{\LogoInstitute}{\includegraphics[height=1cm]{logo-argon-consulting.jpg}\hfill\includegraphics[height=1.5cm]{logo-cermics.jpg}}
+\newcommand{\LogoInstitute}{\includegraphics[height=1cm]{logo_argon_gray.png}\hfill\includegraphics[height=1.5cm]{logo-cermics.png}}
 
 % Pour créer le titre de la note
 \renewcommand\@maketitle{%
