@@ -159,7 +159,9 @@
 % Variables contenant respectivement la date de création, le résumé, les mots-clés
 \def\CreationDate#1{\gdef\@CreationDate{#1}}
 \def\abstract#1{\gdef\@abstract{#1}}
+\let\@abstract\@empty
 \def\keywords#1{\gdef\@keywords{#1}}
+\let\@keywords\@empty
 
 % Pour écrire une adresse mail
 \newcommand{\email}[1]{{\tt#1}}
@@ -216,9 +218,17 @@
   \vskip 0em%
   \noindent\rule{\textwidth}{.5pt}
   \vskip .1em%
-  {\textbf{Résumé} : \itshape \@abstract \normalfont}
-  \vskip .5em%
-  {\textbf{Mots-clés} : \itshape \@keywords \normalfont}
+  {%
+    \ifthenelse{ \equal{\@abstract}{\@empty} }{}%
+    {
+      \textbf{\iflanguage{english}{Abstract:}{\iflanguage{french}{Résumé :}{}}} \itshape \@abstract \normalfont%
+      \vskip .5em%
+    }
+  }
+  {%
+    \ifthenelse{ \equal{\@keywords}{\@empty} }{}%
+    { \textbf{\iflanguage{english}{Keywords:}{\iflanguage{french}{Mots-clés :}{}}} \itshape \@keywords \normalfont }
+  }
   \vskip 0em%
   \noindent\rule{\textwidth}{.5pt}
 }
