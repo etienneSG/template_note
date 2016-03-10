@@ -216,20 +216,18 @@
     {\footnotesize\institutename}
   \end{center}%
   \vskip 0em%
-  \noindent\rule{\textwidth}{.5pt}
-  \vskip .1em%
-  {%
+  \ifthenelse{ \equal{\@abstract\@keywords}{\@empty} }{}{
+    \noindent\rule{\textwidth}{.5pt}%
+    \vskip .1em%
     \ifthenelse{ \equal{\@abstract}{\@empty} }{}%
-    {
-      \textbf{\iflanguage{english}{Abstract:}{\iflanguage{french}{Résumé :}{}}} \itshape \@abstract \normalfont%
-      \vskip .5em%
-    }
-  }
-  {%
-    \ifthenelse{ \equal{\@keywords}{\@empty} }{}%
-    { \textbf{\iflanguage{english}{Keywords:}{\iflanguage{french}{Mots-clés :}{}}} \itshape \@keywords \normalfont }
-  }
-  \vskip 0em%
+    {%
+      { \textbf{\iflanguage{english}{Abstract:}{\iflanguage{french}{Résumé :}{}}} \itshape \@abstract \normalfont }%
+      \ifthenelse{ \equal{\@keywords}{\@empty} }{}{\vskip .5em}%
+    }%
+    \ifthenelse{ \equal{\@keywords}{\@empty} }{}
+    {{\textbf{\iflanguage{english}{Keywords:}{\iflanguage{french}{Mots-clés :}{}}} \itshape \@keywords \normalfont}}%
+    \vskip 0em%
+  }%
   \noindent\rule{\textwidth}{.5pt}
 }
 
