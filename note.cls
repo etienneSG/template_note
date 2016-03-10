@@ -190,7 +190,7 @@
  \endgroup}
 
 % Logo
-\newcommand{\LogoInstitute}{\includegraphics[height=1cm]{logo_argon_gray.png}\hfill\includegraphics[height=1.5cm]{logo-cermics.png}}
+\newcommand{\LogoInstitute}{\includegraphics[height=1cm]{logo_argon_gray.png}\hfill\includegraphics[height=1cm]{logo_ponts.png}}
 
 % Pour créer le titre de la note
 \renewcommand\@maketitle{%
