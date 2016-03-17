@@ -5,7 +5,7 @@
 
 \usepackage[utf8]{inputenc}
 \usepackage[T1]{fontenc}
-\usepackage[francais]{babel}
+\usepackage[frenchb]{babel}
 
 % Pour définir une commande en plusieurs langues
 \newcommand{\multilangnewcommand}[3]{%
