@@ -5,7 +5,7 @@
 
 \usepackage[utf8]{inputenc}
 \usepackage[T1]{fontenc}
-\usepackage[frenchb]{babel}
+\input{param/lang.param}
 
 % Pour définir une commande en plusieurs langues
 \newcommand{\multilangnewcommand}[3]{%
@@ -33,7 +33,7 @@
 \usepackage{graphicx}
 
 % Pour pouvoir modifier les énumérations
-\frenchbsetup{StandardLists=true}
+\iflanguage{french}{\frenchbsetup{StandardLists=true}}{}
 \usepackage{enumitem}
 \usepackage[ampersand]{easylist}
 \setlist[]{leftmargin=*}
@@ -47,7 +47,7 @@
 \urlstyle{rm}
 
 % Pour plus de maths et de chimie
-\usepackage{amsmath,amsfonts,amsthm,dsfont}
+\usepackage{amsmath,amsfonts,amsthm,dsfont,stmaryrd}
 \usepackage[overload]{empheq}
 \usepackage[version=3]{mhchem} % Chimie
 \usepackage{siunitx}  % Utilisation des unités SI
@@ -111,7 +111,11 @@
 }
 
 % Pour du pseudo-code
-\usepackage[french]{algorithm2e}
+\iflanguage{english}{%
+  \usepackage[english]{algorithm2e}%
+}{%
+  \iflanguage{french}{\usepackage[french]{algorithm2e}}{}%
+}
 \setlength{\algomargin}{0em}
 
 % Pour les tableaux
@@ -123,13 +127,13 @@
 
 % On définit l'environnement propre au théorème
 \theoremstyle{plain} % default (corps en italique)
-\newtheorem{thm}{Théorème}
-\newtheorem{lem}[thm]{Lemme}
-\newtheorem{prop}[thm]{Proposition}
+\newtheorem{thm}{\iflanguage{english}{Theorem}{\iflanguage{french}{Théorème}{}}}
+\newtheorem{lem}[thm]{\iflanguage{english}{Lemma}{\iflanguage{french}{Lemme}{}}}
+\newtheorem{prop}[thm]{\iflanguage{english}{Proposition}{\iflanguage{french}{Proposition}{}}}
 \theoremstyle{definition} % (corps en texte normal)
-\newtheorem{conj}{Conjecture}
-\newtheorem*{rmq}{Remarque}
-\newtheorem{hyp}{Hypothèse}
+\newtheorem{conj}{\iflanguage{english}{Conjecture}{\iflanguage{french}{Conjecture}{}}}
+\newtheorem*{rmq}{\iflanguage{english}{Remark}{\iflanguage{french}{Remarque}{}}}
+\newtheorem{hyp}{\iflanguage{english}{Hypothesis}{\iflanguage{french}{Hypothèse}{}}}
 
 % Pour dessiner
 \usepackage{xcolor}
@@ -147,7 +151,9 @@
 
 % Raccourci utile
 \newcommand{\red}[1]{\textcolor{red}{#1}} % texte en rouge
-
+\newcommand{\tbc}{\red{\texttt{To be completed}}}
+\newcommand{\todo}[1]{\red{\texttt{(TO DO: #1)}}}
+\def\ds{\displaystyle}
 
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 %%%%%                                                          %%%%%
@@ -204,7 +210,7 @@
     \vskip 1em%
     \textit{\@CreationDate}
     \vskip .1em%
-    \textit{(dernière révision : \today)}
+    \textit{(\iflanguage{english}{last version:}{\iflanguage{french}{dernière révision :}{}} \today)}
     \vskip 2em%
     {\large
       \lineskip .5em%
@@ -221,11 +227,11 @@
     \vskip .1em%
     \ifthenelse{ \equal{\@abstract}{\@empty} }{}%
     {%
-      { \textbf{\iflanguage{english}{Abstract:}{\iflanguage{french}{Résumé :}{}}} \itshape \@abstract \normalfont }%
+      \noindent{\textbf{\iflanguage{english}{Abstract:}{\iflanguage{french}{Résumé :}{}}} \itshape \@abstract \normalfont}%
       \ifthenelse{ \equal{\@keywords}{\@empty} }{}{\vskip .5em}%
     }%
     \ifthenelse{ \equal{\@keywords}{\@empty} }{}
-    {{\textbf{\iflanguage{english}{Keywords:}{\iflanguage{french}{Mots-clés :}{}}} \itshape \@keywords \normalfont}}%
+    {\noindent{\textbf{\iflanguage{english}{Keywords:}{\iflanguage{french}{Mots-clés :}{}}} \itshape \@keywords \normalfont}}%
     \vskip 0em%
   }%
   \noindent\rule{\textwidth}{.5pt}

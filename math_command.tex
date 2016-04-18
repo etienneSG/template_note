@@ -113,7 +113,8 @@
 \newcommand{\crbracket}[1]{\left\{#1\right\}}               % Accolade normale
 
 %%%%% Intervale d'entiers
-\newcommand{\range}[2][1]{\left\{#1,\ldots,#2\right\}}
+\newcommand{\range}[2][1]{\left\llbracket#1,#2\right\rrbracket}
+%\newcommand{\range}[2][1]{\left\{#1,\ldots,#2\right\}}
 
 %%%%% Cardinal d'un ensemble
 \newcommand{\card}[1]{\left\vert{#1}\right\vert}
@@ -338,4 +339,37 @@
 
 \newcommand{\Uad}{\partie{U}\ad}
 \newcommand{\Pad}[1]{\proj{\Uad}{#1}}
+
+
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%%%%%                                                          %%%%%
+%%%%% Variables                                                %%%%%
+%%%%%                                                          %%%%%
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+% Commun
+\newcommand\REF{R}  % Ensemble des références
+
+
+% Modèle multi-ligne
+\newcommand\capa{cap}  % Capacité des lignes
+\newcommand\aff{a}     % Matrice d'affectation
+\newcommand\occ{or}    % Taux d'occupation unitaire des lignes
+
+
+% Modele PDP
+\newcommand\nbPeriod{T}                                % Number of periods
+\newcommand\demandPeriodRef[2]{d_{#1}^{#2}}            % Demand in reference #2 at period #1
+\newcommand\stockcostPeriodeRef[2]{h_{#1}^{#2}}        % holding cost of reference #2 at the end of period #1
+\newcommand\capaPeriod[1]{c_{#1}}                      % Capacity of the assembly line at period #1
+\newcommand\capaPeriodRef[2]{c_{#1}^{#2}}              % Capacity of the assembly line at period #1 for the reference #2
+\newcommand\occupationRatePeriodRef[2]{v_{#1}^{#2}}    % Capacity needed for assembly line to produce one unit of reference #2 at period #1
+\newcommand\nbChange{N}                                % Total number of changes of the line
+\newcommand\nbChangePeriod[1]{N_{#1}}                  % Number of change per during period #1
+\newcommand\isProductedPeriodRef[2]{x_{#1}^{#2}}       % 1 if reference #2 is producted at period #1 and 0 otherwise
+\newcommand\quantityPeriodeRef[2]{q_{#1}^{#2}}         % Quantity of reference #2 produced at period #1
+\newcommand\stockPeriodeRef[2]{s_{#1}^{#2}}            % Stock of reference #2 at the end of period #1
+\newcommand\stockSecuRef[1]{s_{\mathrm{min}}^{#1}}     % Security stock of the reference #1
+
 
