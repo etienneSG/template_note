@@ -148,6 +148,8 @@
 \usetikzlibrary{patterns}
 \usepackage{tikzscale}
 
+% allows line breaks in \cite
+\usepackage{cite}
 
 % Raccourci utile
 \newcommand{\red}[1]{\textcolor{red}{#1}} % texte en rouge
