@@ -3,7 +3,7 @@
 
 \LoadClass[a4paper,11pt,twoside]{article}
 
-\usepackage[utf8]{inputenc}
+\usepackage[utf8]{luainputenc}
 \usepackage[T1]{fontenc}
 \input{param/lang.param}
 
@@ -142,11 +142,17 @@
 \definecolor{argon orange}{RGB}{237, 128, 0}
 \definecolor{argon gray}{RGB}{83, 86, 90}
 
+% Tikzpicture
 \usepackage{tikz}
 \usetikzlibrary{calc,arrows,automata}
 \usetikzlibrary{decorations,decorations.pathreplacing}
 \usetikzlibrary{patterns}
 \usepackage{tikzscale}
+
+% Gnuplot picture
+\usepackage{latexsym, keyval, ifthen, moreverb, gnuplot-lua-tikz}
+\usepackage{gnuplottex}
+
 
 % allows line breaks in \cite
 \usepackage{cite}
