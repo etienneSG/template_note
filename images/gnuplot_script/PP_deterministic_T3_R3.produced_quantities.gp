@@ -1,6 +1,6 @@
 # Output parameters
-# set terminal tikz
-# set output 'images/PP_deterministic_T3_R3.produced_quantities.eps'
+set terminal tikz color dashed
+set output 'images/gnuplot_output/PP_deterministic_T3_R3.produced_quantities.tikz'
 
 # Size of the graph
 set size 1.25,.75
