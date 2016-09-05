@@ -7,6 +7,8 @@
 \usepackage[T1]{fontenc}
 \input{param/lang.param}
 
+\usepackage{etoolbox}
+
 % Pour définir une commande en plusieurs langues
 \newcommand{\multilangnewcommand}[3]{%
   \newcommand{#1}{%
@@ -129,6 +131,7 @@
 \theoremstyle{plain} % default (corps en italique)
 \newtheorem{thm}{\iflanguage{english}{Theorem}{\iflanguage{french}{Théorème}{}}}
 \newtheorem{lem}[thm]{\iflanguage{english}{Lemma}{\iflanguage{french}{Lemme}{}}}
+\newtheorem*{lem*}{\iflanguage{english}{Lemma}{\iflanguage{french}{Lemme}{}}}
 \newtheorem{prop}[thm]{\iflanguage{english}{Proposition}{\iflanguage{french}{Proposition}{}}}
 \theoremstyle{definition} % (corps en texte normal)
 \newtheorem{conj}{\iflanguage{english}{Conjecture}{\iflanguage{french}{Conjecture}{}}}

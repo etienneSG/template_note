@@ -113,7 +113,13 @@
 \newcommand{\crbracket}[1]{\left\{#1\right\}}               % Accolade normale
 
 %%%%% Intervale d'entiers
-\newcommand{\range}[2][1]{\left\llbracket#1,#2\right\rrbracket}
+% If the lower bound is not specified, it assumes 1.
+\makeatletter
+\def\range{\@ifnextchar[{\@with}{\@without}}
+\def\@with[#1]#2{\left\llbracket#1,#2\right\rrbracket}
+\def\@without#1{\sqbracket{#1}}
+\makeatother
+%\newcommand{\range}[2][1]{\left\llbracket#1,#2\right\rrbracket}
 %\newcommand{\range}[2][1]{\left\{#1,\ldots,#2\right\}}
 
 %%%%% Cardinal d'un ensemble
