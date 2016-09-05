@@ -133,6 +133,7 @@
 \newtheorem{lem}[thm]{\iflanguage{english}{Lemma}{\iflanguage{french}{Lemme}{}}}
 \newtheorem*{lem*}{\iflanguage{english}{Lemma}{\iflanguage{french}{Lemme}{}}}
 \newtheorem{prop}[thm]{\iflanguage{english}{Proposition}{\iflanguage{french}{Proposition}{}}}
+\newtheorem{cor}[thm]{\iflanguage{english}{Corollary}{\iflanguage{french}{Corollaire}{}}}
 \theoremstyle{definition} % (corps en texte normal)
 \newtheorem{conj}{\iflanguage{english}{Conjecture}{\iflanguage{french}{Conjecture}{}}}
 \newtheorem*{rmq}{\iflanguage{english}{Remark}{\iflanguage{french}{Remarque}{}}}
