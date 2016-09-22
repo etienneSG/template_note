@@ -115,9 +115,19 @@
 % Pour du pseudo-code
 \iflanguage{english}{%
   \usepackage[english]{algorithm2e}%
+  \SetKw{And}{and}%
+  \SetKw{From}{from}%
+  \SetKw{To}{to}%
 }{%
-  \iflanguage{french}{\usepackage[french]{algorithm2e}}{}%
+  \iflanguage{french}{%
+    \usepackage[french]{algorithm2e}%
+    \SetKw{And}{et}%
+    \SetKw{From}{de}%
+    \SetKw{To}{\`{a}}%
+  }{}%
 }
+
+
 \setlength{\algomargin}{0em}
 
 % Pour les tableaux
