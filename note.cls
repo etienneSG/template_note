@@ -54,6 +54,13 @@
 \usepackage[version=3]{mhchem} % Chimie
 \usepackage{siunitx}  % Utilisation des unités SI
 
+% fixes both \left and \right (space after)
+\let\originalleft\left
+\let\originalright\right
+\def\left#1{\mathopen{}\originalleft#1}
+\def\right#1{\originalright#1\mathclose{}}
+
+
 % Pour que les caractères sous l'accolade soient en taille normale
 \newcommand\displayUB[2]{\underbrace{#1}_{\displaystyle #2}}
 
